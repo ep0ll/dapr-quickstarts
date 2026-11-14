@@ -2,6 +2,9 @@
 
 In this quickstart, you'll schedule, get, and delete a job using Dapr's Job API. This API is responsible for scheduling and running jobs at a specific time or interval.
 
+Both jobs keep their distinct scheduler names (`R2-D2` and `C-3PO`) but set `overrideRoutePath` to `droid/maintenance`. Dapr therefore delivers both jobs to the same `/job/droid/maintenance` callback route, which the service's catch-all `/job/` handler can process.
+
+
 Visit [this](https://docs.dapr.io/developing-applications/building-blocks/jobs/) link for more information about Dapr and the Jobs API.
 
 This quickstart includes two apps:
@@ -123,7 +126,8 @@ curl -X POST \
         "data": {
           "value": "R2-D2:Oil Change"
         },
-        "dueTime": "2s"
+        "dueTime": "2s",
+        "overrideRoutePath": "droid/maintenance"
     }'
 ```
 
@@ -145,7 +149,8 @@ curl -X POST \
     "data": {
       "value": "C-3PO:Limb Calibration"
     },
-    "dueTime": "30s"
+    "dueTime": "30s",
+    "overrideRoutePath": "droid/maintenance"
   }'
 ```
 

@@ -4,6 +4,7 @@ const c3poJobBody = {
     value: "C-3PO:Limb Calibration",
   },
   dueTime: "20s",
+  overrideRoutePath: "droid/maintenance",
 };
 
 const r2d2JobBody = {
@@ -11,6 +12,7 @@ const r2d2JobBody = {
     value: "R2-D2:Oil Change",
   },
   dueTime: "15s",
+  overrideRoutePath: "droid/maintenance",
 };
 const daprHost = process.env.DAPR_HOST || "http://localhost";
 const jobServiceDaprHttpPort = "6280";

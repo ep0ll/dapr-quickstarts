@@ -5,13 +5,15 @@ using System.Text.Json;
 var c3poJobBody = new
 {
     data = new { Value = "C-3PO:Limb Calibration" },
-    dueTime = "20s"
+    dueTime = "20s",
+    overrideRoutePath = "droid/maintenance"
 };
 
 var r2d2JobBody = new
 {
     data = new { Value = "R2-D2:Oil Change" },
-    dueTime = "15s"
+    dueTime = "15s",
+    overrideRoutePath = "droid/maintenance"
 };
 
 var daprHost = Environment.GetEnvironmentVariable("DAPR_HOST") ?? "http://localhost";

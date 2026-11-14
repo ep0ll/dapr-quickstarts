@@ -15,7 +15,8 @@ var c3poJobBody = `{
       "@type": "type.googleapis.com/google.protobuf.StringValue",
       "value": "C-3PO:Limb Calibration"
     },
-    "dueTime": "30s"
+    "dueTime": "30s",
+    "overrideRoutePath": "droid/maintenance"
   }`
 
 var r2d2JobBody = `{
@@ -23,7 +24,8 @@ var r2d2JobBody = `{
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "R2-D2:Oil Change"
         },
-        "dueTime": "2s"
+        "dueTime": "2s",
+        "overrideRoutePath": "droid/maintenance"
     }`
 
 func main() {
